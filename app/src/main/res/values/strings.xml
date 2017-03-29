@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="name">Enter Name</string>
+    <string name="question1">Attraction of two ions due to opposite charge is known as</string>
+    <string name="question2"> If mass of protons is 1, then mass of electron is</string>
+    <string name="question3">Name of physicist who discovered nucleus of atom is</string>
+    <string name="question4"> Radioactive particles give off</string>
+    <string name="question5">Symbol of Potassium is</string>
+    <string name="question6">Valency of sodium is</string>
+    <string name="consent">I hereby agree that all of my answers are original</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+
+</resources>
