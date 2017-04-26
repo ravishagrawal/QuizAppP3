@@ -4,17 +4,92 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
     tools:context="com.example.android.quizappp3.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/consent"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/genderMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Yes" />
+
+            <RadioButton
+                android:id="@+id/genderFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No" />
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/question4"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <RadioGroup
+            android:id="@+id/radioq4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/genderWaves"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Waves" />
+
+            <RadioButton
+                android:id="@+id/genderRays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rays" />
+
+        </RadioGroup>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:text="Submit" />
+
+        </RelativeLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,6 +109,7 @@
                 android:id="@+id/a1_1_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"
                 android:paddingLeft="16dp"
                 android:text="Ionic Bond"
                 android:textAppearance="?android:textAppearanceMedium"
@@ -43,35 +119,29 @@
                 android:id="@+id/a1_2_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"
                 android:paddingLeft="16dp"
                 android:text="Covalent Bond"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/question2"
-                android:textColor="#000"
-                android:textSize="16sp" />
-
             <CheckBox
-                android:id="@+id/a2_1_checkbox"
+                android:id="@+id/a1_3_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"
                 android:paddingLeft="16dp"
-                android:text="1/1890"
+                android:text="Hydrogen Bond"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textSize="16sp" />
 
             <CheckBox
-                android:id="@+id/a2_2_checkbox"
+                android:id="@+id/a1_4_checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"
                 android:paddingLeft="16dp"
-                android:text="0"
+                android:text="Metallic Bond"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textSize="16sp" />
 
@@ -80,145 +150,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/question3"
+                android:text="@string/question7"
                 android:textColor="#000"
                 android:textSize="16sp" />
 
-            <CheckBox
-                android:id="@+id/a3_1_checkbox"
+            <EditText
+                android:id="@+id/neutron"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/answerhere"
+                android:inputType="textPersonName" />
+            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="Ernst Rutherford"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
+                android:onClick="submit"
+                android:text="Submit" />
 
-            <CheckBox
-                android:id="@+id/a3_2_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="James Cadwick"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/question4"
-                android:textColor="#000"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a4_1_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="Waves"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a4_2_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="Rays"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/question5"
-                android:textColor="#000"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a5_1_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="Po"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a5_2_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="K"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/question6"
-                android:textColor="#000"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a6_1_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="11"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
-
-            <CheckBox
-                android:id="@+id/a6_2_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:text="1"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="16sp" />
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:text="@string/consent"
-                android:textAllCaps="true" />
-
-                <RadioButton
-                    android:id="@+id/radioMale"
-                    android:layout_alignParentLeft="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/yes" />
-
-                <RadioButton
-                    android:id="@+id/radioFemale"
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/no" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-        </LinearLayout>
 
         <EditText
             android:id="@+id/name"
@@ -227,13 +178,12 @@
             android:hint="@string/name"
             android:inputType="textPersonName" />
 
-
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="submitOrder"
+            android:onClick="getScore"
             android:text="Get Score" />
+
 
     </LinearLayout>
 
